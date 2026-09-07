@@ -1,0 +1,59 @@
+# ═══════════════════════════════════════
+# BACKEND .GITIGNORE
+# ═══════════════════════════════════════
+
+# Dependencies
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.production
+!.env.example
+
+# Database
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/
+!data/.gitkeep
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+!uploads/temp/
+!uploads/temp/.gitkeep
+!uploads/thumbnails/
+!uploads/thumbnails/.gitkeep
+
+# Encryption keys (SANGAT PENTING!)
+data/encryption_key.txt
+encryption_key.txt
+*.key
+*.pem
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Backup
+*.backup
+*.bak
