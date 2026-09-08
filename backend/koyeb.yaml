@@ -1,0 +1,29 @@
+name: securecloud-backend
+service:
+  name: securecloud-backend
+  type: web
+  builder:
+    type: dockerfile
+    dockerfile: Dockerfile
+  port: 5000
+  env:
+    - name: PORT
+      value: "5000"
+    - name: NODE_ENV
+      value: "production"
+    - name: DB_PATH
+      value: "./data/cloud_storage.db"
+    - name: STORAGE_MODE
+      value: "sqlite"
+    - name: JWT_SECRET
+      value: "your_jwt_secret_here"
+    - name: JWT_EXPIRE
+      value: "7d"
+    - name: ENCRYPTION_KEY
+      value: "your_encryption_key_here"
+    - name: MAX_FILE_SIZE
+      value: "104857600"
+    - name: MAX_STORAGE_QUOTA
+      value: "5368709120"
+    - name: FRONTEND_URL
+      value: "https://your-frontend.vercel.app"

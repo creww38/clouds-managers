@@ -1,0 +1,26 @@
+app = "securecloud-backend"
+primary_region = "sin"
+
+[build]
+  builder = "node"
+
+[env]
+  PORT = "8080"
+  NODE_ENV = "production"
+
+[processes]
+  app = "node server.js"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  processes = ["app"]
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+    force_https = true
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
